@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Krishna Sharma | Freelance Video Editor</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08080d;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8, 8, 13, 0.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #242430;
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #9b5cff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #aaaab5;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid #30303b;
+      background: #15151d;
+      color: white;
+      font-size: 22px;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 50px;
+      padding: 70px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: #181020;
+      border: 1px solid #382550;
+      color: #cbb0ff;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #9b5cff, #ff4fa3);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: #a5a5b0;
+      font-size: 18px;
+      max-width: 600px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 12px;
+      border: 1px solid #292936;
+      background: #15151d;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      border: none;
+    }
+
+
+    /* =========================
+       PROFILE PHOTO
+    ========================= */
+
+    .profile-box {
+      width: 350px;
+      height: 350px;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid #333342;
+      background: #15151d;
+      box-shadow: 0 20px 80px rgba(139, 92, 246, 0.15);
+    }
+
+    .profile-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 40px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      color: #9999a5;
+      margin-bottom: 35px;
+    }
+
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #13131b;
+      border: 1px solid #272733;
+      border-radius: 20px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #7547c9;
+    }
+
+    .icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #9999a5;
+      font-size: 15px;
+    }
+
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .project {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #211633;
+      color: #c9aaff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       VIDEO PLAYER
+    ========================= */
+
+    .video-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: 20px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #08080d;
+      border: 1px solid #292936;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+
+    /* =========================
+       PRICING
+    ========================= */
+
+    #pricing {
+      padding: 80px 20px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .pricing-card {
+      background: #11111a;
+      border: 1px solid #292936;
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #9b5cff;
+      box-shadow: 0 10px 30px rgba(155, 92, 255, 0.15);
+    }
+
+    .pricing-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .pricing-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 15px 0 5px;
+
+      background: linear-gradient(90deg, #9b5cff, #ff4fa3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .pricing-card p {
+      color: #aaa;
+    }
+
+    .description {
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+
+    .pricing-card .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #9b5cff, #ff4fa3);
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .pricing-card .btn:hover {
+      transform: scale(1.05);
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      text-align: center;
+      padding: 55px 25px;
+      background: linear-gradient(145deg, #171022, #101017);
+      border: 1px solid #292936;
+      border-radius: 28px;
+    }
+
+    .contact p {
+      color: #9999a5;
+      margin: 12px 0 25px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid #252530;
+      padding: 25px;
+      text-align: center;
+      color: #777783;
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text {
+        margin: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .profile-box {
+        width: 300px;
+        height: 300px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card {
+        max-width: 450px;
+        width: 100%;
+        margin: auto;
+      }
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+
+      .container {
+        width: 92%;
+      }
+
+      .nav {
+        min-height: 65px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: rgba(8, 8, 13, 0.97);
+        border-bottom: 1px solid #292936;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        font-size: 15px;
+      }
+
+      .nav-links a:hover {
+        background: #17171f;
+      }
+
+
+      /* Hero */
+
+      .hero {
+        min-height: auto;
+        padding: 70px 0;
+        gap: 45px;
+      }
+
+      h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        text-align: center;
+        width: 100%;
+      }
+
+
+      /* Profile */
+
+      .profile-box {
+        width: 270px;
+        height: 270px;
+      }
+
+
+      /* Sections */
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+
+      /* Cards */
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+
+      /* Pricing */
+
+      #pricing {
+        padding: 70px 20px;
+      }
+
+      .pricing-card {
+        padding: 25px 20px;
+      }
+
+
+      /* Contact */
+
+      .contact {
+        padding: 40px 18px;
+      }
+
+      .contact .btn {
+        word-break: break-word;
+      }
+    }
+
+
+    /* =========================
+       SMALL PHONES
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .profile-box {
+        width: 230px;
+        height: 230px;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav">
+
+      <a href="#" class="logo">
+        K<span>S</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="#about" onclick="closeMenu()">
+          About
+        </a>
+
+        <a href="#skills" onclick="closeMenu()">
+          Skills
+        </a>
+
+        <a href="#projects" onclick="closeMenu()">
+          Projects
+        </a>
+
+        <a href="#pricing" onclick="closeMenu()">
+          Pricing
+        </a>
+
+        <a href="#contact" onclick="closeMenu()">
+          Contact
+        </a>
+
+      </div>
+
+      <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+      </button>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero container">
+
+    <div>
+
+      <div class="badge">
+        Available for Freelance Projects
+      </div>
+
+      <h1>
+        Krishna
+        <span class="gradient">
+          Sharma.
+        </span>
+      </h1>
+
+      <p class="hero-text">
+        Freelance Video Editor creating modern,
+        clean and engaging edits for creators,
+        brands and social media.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#projects" class="btn btn-primary">
+          View My Work
+        </a>
+
+        <a href="mailto:sharmakrishna112008@gmail.com" class="btn">
+          Hire Me
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROFILE PHOTO -->
+
+    <div class="profile-box">
+
+      <img src="./img/profile.jpeg" alt="Krishna Sharma Profile Photo">
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        About Me
+      </h2>
+
+      <p class="section-subtitle">
+        A student, freelancer and passionate video editor.
+      </p>
+
+      <div class="grid">
+
+
+        <div class="card">
+
+          <div class="icon">
+            🎬
+          </div>
+
+          <h3>
+            2+ Years Experience
+          </h3>
+
+          <p>
+            I have around 2 years of experience
+            in video editing and creating engaging
+            content.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🎓
+          </div>
+
+          <h3>
+            Class 11 Student
+          </h3>
+
+          <p>
+            Currently studying in Class 11 while
+            building my freelance video editing career.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            💼
+          </div>
+
+          <h3>
+            Professional Work
+          </h3>
+
+          <p>
+            Currently working on video editing
+            projects with QRMITR company.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       SKILLS
+  ========================== -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Skills & Tools
+      </h2>
+
+      <p class="section-subtitle">
+        Tools and skills I use to create modern videos.
+      </p>
+
+      <div class="grid">
+
+
+        <div class="card">
+
+          <div class="icon">
+            ✂️
+          </div>
+
+          <h3>
+            Video Editing
+          </h3>
+
+          <p>
+            Clean cuts, transitions, effects,
+            pacing and engaging storytelling.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            ⚡
+          </div>
+
+          <h3>
+            CapCut PC
+          </h3>
+
+          <p>
+            My primary editing software for
+            modern and clean video content.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            ✨
+          </div>
+
+          <h3>
+            Clean Style
+          </h3>
+
+          <p>
+            Modern visuals focused on clarity,
+            rhythm and audience engagement.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PROJECTS
+  ========================== -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        My Projects
+      </h2>
+
+      <p class="section-subtitle">
+        Here are some of my video editing projects.
+      </p>
+
+
+      <div class="grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="card project">
+
+          <div>
+
+            <span class="tag">
+              YouTube Edit
+            </span>
+
+            <h3>
+              Project One
+            </h3>
+
+            <p>
+              My YouTube video editing project.
+            </p>
+
+          </div>
+
+          <div class="video-box">
+
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Project One" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="card project">
+
+          <div>
+
+            <span class="tag">
+              Video Edit
+            </span>
+
+            <h3>
+              Project Two
+            </h3>
+
+            <p>
+              My second video editing project.
+            </p>
+
+          </div>
+
+          <div class="video-box">
+
+             <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Project One" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="card project">
+
+          <div>
+
+            <span class="tag">
+              Short Form Motion Edit
+            </span>
+
+            <h3>
+              Project Three
+            </h3>
+
+            <p>
+              Short-form motion editing project.
+            </p>
+
+          </div>
+
+          <div class="video-box">
+            <iframe width="315" height="576" src="https://www.youtube.com/embed/bM0vXJPMqu0"
+              title="motion animation edit" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+        </div>
+
+        <!-- PROJECT 4 -->
+
+        <div class="card project">
+
+          <div>
+
+            <span class="tag">
+              Short Form Motion Edit
+            </span>
+
+            <h3>
+              Project four
+            </h3>
+
+            <p>
+              Short-form motion editing project.
+            </p>
+
+          </div>
+
+          <div class="video-box">
+            <iframe width="315" height="576" src="https://www.youtube.com/embed/2mK81ZLuziM"
+              title="animated motion edit" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+        </div>
+
+        <!-- PROJECT 5 -->
+
+        <div class="card project">
+
+          <div>
+
+            <span class="tag">
+              storytelling Edit
+            </span>
+
+            <h3>
+              Project five
+            </h3>
+
+            <p>
+              clean cuts storytelling edit.
+            </p>
+
+          </div>
+
+          <div class="video-box">
+            <iframe width="405" height="576" src="https://www.youtube.com/embed/6ywx0C1Ji34"
+              title="storytelling edit like" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+        </div>
+
+        <!-- PROJECT 6 -->
+
+        <div class="card project">
+
+          <div>
+
+            <span class="tag">
+              Simple and clean colour grading
+            </span>
+
+            <h3>
+              Project six
+            </h3>
+
+            <p>
+              Simple and clean colour grading
+            </p>
+
+          </div>
+
+          <div class="video-box">
+            <iframe width="315" height="576" src="https://www.youtube.com/embed/704-NZhyVYo"
+              title="simple and clean colour grading edit" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PRICING
+  ========================== -->
+
+  <section id="pricing">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        My Pricing
+      </h2>
+
+      <p class="section-subtitle">
+        Simple and affordable pricing for quality video editing.
+      </p>
+
+      <div class="pricing-grid">
+
+
+        <!-- LIFESTYLE REEL -->
+
+        <div class="pricing-card">
+
+          <div class="pricing-icon">
+            🎬
+          </div>
+
+          <h3>
+            Lifestyle Reel
+          </h3>
+
+          <div class="price">
+            ₹100 – ₹200
+          </div>
+
+          <p>
+            Per Reel
+          </p>
+
+          <p class="description">
+            Clean cuts, smooth transitions,
+            music sync and engaging edits.
+          </p>
+
+          <a href="mailto:sharmakrishna112008@gmail.com" class="btn">
+            Hire Me
+          </a>
+
+        </div>
+
+
+
+        <!-- MOTION EDIT -->
+
+        <div class="pricing-card">
+
+          <div class="pricing-icon">
+            ⚡
+          </div>
+
+          <h3>
+            Short-form Motion Edit
+          </h3>
+
+          <div class="price">
+            ₹150 – ₹250
+          </div>
+
+          <p>
+            Per Short
+          </p>
+
+          <p class="description">
+            Motion effects, dynamic transitions,
+            text animation and music sync.
+          </p>
+
+          <a href="mailto:sharmakrishna112008@gmail.com" class="btn">
+            Hire Me
+          </a>
+
+        </div>
+
+
+
+        <!-- VIDEO EDITING -->
+
+        <div class="pricing-card">
+
+          <div class="pricing-icon">
+            🎥
+          </div>
+
+          <h3>
+            Video Editing
+          </h3>
+
+          <div class="price">
+            ₹400 – ₹1,000
+          </div>
+
+          <p>
+            Per Video
+          </p>
+
+          <p class="description">
+            Professional editing, clean storytelling,
+            transitions, effects and audio sync.
+          </p>
+
+          <a href="mailto:sharmakrishna112008@gmail.com" class="btn">
+            Hire Me
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact">
+
+        <h2 class="section-title">
+          Let's Work Together
+        </h2>
+
+        <p>
+          Have a video project?
+          Send me a message and let's create
+          something amazing.
+        </p>
+
+        <a class="btn btn-primary" href="mailto:sharmakrishna112008@gmail.com">
+          📧 Contact Me
+        </a>
+
+        <p style="margin-top:20px;">
+          📍 Bokaro, Jharkhand, India
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026 Krishna Sharma
+    · Free
